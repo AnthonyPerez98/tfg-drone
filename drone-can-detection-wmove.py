@@ -20,10 +20,6 @@ def desplazamiento_camara_dron():
     tello.connect()
     tello.takeoff()
 
-    # Iniciar el recorrido en forma de "L"
-    tello.move_forward(50)
-    tello.move_right(50)
-
     # Capturar la cámara del dron y realizar el desplazamiento
     while True:
         # Capturar el frame de la cámara del dron
@@ -55,17 +51,8 @@ def desplazamiento_camara_dron():
         # Mostrar el frame con las detecciones
         cv2.imshow("Coca-Cola Detection", frame)
 
-        # Obtener la distancia al objeto frente al dron (TOF - Time of Flight)
-        distance_tof = tello.get_distance_tof()
-
         # Esperar un breve momento y verificar si se presiona la tecla 'q' para salir
         if cv2.waitKey(int(1000 / fps)) & 0xFF == ord('q'):
-            break
-
-        # Verificar si ha alcanzado la distancia objetivo y aterrizar
-        if distance_tof is not None and distance_tof < target_distance:
-            print("Objetivo alcanzado. Aterrizando...")
-            tello.land()
             break
 
     # Cerrar la conexión con el dron
