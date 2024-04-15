@@ -1,41 +1,49 @@
-import cv2
-import numpy as np
 from inference_sdk import InferenceHTTPClient
+from djitellopy import Tello
 
-# Inicializar el cliente de inferencia
+# Inicializar el cliente de inferencia de Roboflow
 CLIENT = InferenceHTTPClient(
     api_url="https://detect.roboflow.com",
     api_key="tVYeBTfHjApBrSJzNiQF"
 )
 
-def process_detection(result, frame):
-    # Obtener las dimensiones del fotograma
-    height, width, _ = frame.shape
+# Función para realizar la detección de objetos con el dron Tello
+def detect_objects_with_tello():
+    # Conectar al dron Tello
+    tello = Tello()
+    tello.connect()
 
-    # Procesar las predicciones
-    for prediction in result['predictions']:
-        x = int(prediction["x"])
-        y = int(prediction["y"])
-        w = int(prediction["width"])
-        h = int(prediction["height"])
-        confidence = prediction["confidence"]
-        class_name = prediction["class"]
+    # Configurar la resolución de la cámara
+    tello.set_video_resolution('Tello.RESOLUTION_480P')
 
-        # Dibujar el cuadro delimitador y mostrar la etiqueta de clase
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        cv2.putText(frame, f"{class_name}: {confidence:.2f}", (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+    # Iniciar el flujo de video
+    tello.streamon()
 
-    # Mostrar el fotograma con las predicciones
-    cv2.imshow('Object Detection', frame)
-    cv2.waitKey(1)
+    try:
+        # Realizar la detección de objetos mientras se recibe el flujo de video
+        while True:
+            # Capturar un fotograma del flujo de video
+            frame = tello.get_frame_read().frame
 
-# Bucle principal
-while True:
-    # Capturar un fotograma de la cámara Tello (código no proporcionado)
-    frame = capture_frame_from_tello()
+            # Enviar el fotograma para la detección de objetos
+            result = CLIENT.infer(frame, model_id="tfg-ls1lh/2")
 
-    # Realizar la inferencia en el fotograma
-    result = CLIENT.infer(frame, model_id="tfg-ls1lh/3")
+            # Procesar el resultado de la detección
+            process_detection(result)
 
-    # Procesar la detección de objetos y mostrar el resultado en la pantalla
-    process_detection(result, frame)
+    except KeyboardInterrupt:
+        # Detener el flujo de video y cerrar la conexión con el dron Tello al presionar Ctrl+C
+        tello.streamoff()
+        tello.end()
+
+# Función para procesar el resultado de la detección de objetos
+def process_detection(result):
+    # Procesar el resultado aquí, por ejemplo, imprimir las predicciones
+    print(result)
+
+# Función principal para iniciar la detección de objetos con el dron Tello
+def main():
+    detect_objects_with_tello()
+
+if __name__ == "__main__":
+    main()
