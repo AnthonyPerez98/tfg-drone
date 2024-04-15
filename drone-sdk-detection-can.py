@@ -41,7 +41,7 @@ def process_detection(result):
     # Procesar el resultado aquí, por ejemplo, imprimir las predicciones
     print(result)
 
-# Función principal para iniciar la detección de objetos con el dron Tello
+# Función principal para iniciar la detección de objetos con el dron Tello d
 def main():
     detect_objects_with_tello()
 
