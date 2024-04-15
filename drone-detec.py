@@ -21,8 +21,6 @@ def desplazamiento_camara_dron():
     tello.takeoff()
 
     # Iniciar el recorrido en forma de "L"
-    tello.move_forward(50)
-    tello.move_right(50)
 
     # Capturar la cámara del dron y realizar el desplazamiento
     while True:
