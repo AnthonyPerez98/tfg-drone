@@ -1,4 +1,4 @@
-TFG Drone: Autonomous Vision for Object Detection
+<h2>TFG Drone: Autonomous Vision for Object Detection</h2>
 
 This repository contains the code and resources for the final year project "Autonomous Vision for Object Detection using Drones." The project focuses on using the Tello drone, machine learning, and computer vision to detect objects in real-time.
 
