@@ -65,7 +65,7 @@ In this project, we explore the capabilities of autonomous vision in drones, par
 
 ## Usage
 
-Running the Main Code
+Running the main code
 
 The primary script for object detection is `drone-sdk-detection-canV2.py`. This script performs real-time object detection using the Tello drone.
 
@@ -74,7 +74,7 @@ To run the script:
 python drone-sdk-detection-canV2.py
 ```
 
-Optional Script
+Optional script
 
 `drone-sdk-detection-can.py` is an optional script that can be used if you only want to retrieve the detection data without performing any further processing or visualization.
 
@@ -83,7 +83,7 @@ To run the optional script:
 python drone-sdk-detection-can.py
 ```
 
-Model Selection
+Model selection
 
 The code is designed to be general and can detect any objects, depending on the model chosen. You will need to select the model type, version, and API from Roboflow. This flexibility allows you to detect various objects by configuring the appropriate model in Roboflow and updating your API key and model details accordingly.
 
