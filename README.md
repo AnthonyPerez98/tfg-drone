@@ -1,4 +1,4 @@
-<h1>TFG Drone: Autonomous Vision for Object Detection<h1/>
+TFG Drone: Autonomous Vision for Object Detection
 
 This repository contains the code and resources for the final year project "Autonomous Vision for Object Detection using Drones." The project focuses on using the Tello drone, machine learning, and computer vision to detect objects in real-time.
 
@@ -14,17 +14,17 @@ Table of Contents
 8. [Code Walkthrough](#code-walkthrough)
 9. [License](#license)
 
-Introduction
+## Introduction
 
 In this project, we explore the capabilities of autonomous vision in drones, particularly using machine learning for object detection. The Tello drone is used as a platform for capturing real-time video, which is then processed to detect objects accurately.
 
-Features
+## Features
 
 - Real-time object detection using the Tello drone.
 - Integration with advanced tools such as Roboflow for model training and inference.
 - Comprehensive documentation and code walkthrough.
 
-Requirements
+## Requirements
 
 - Python 3.8 or higher
 - Tello drone
@@ -36,7 +36,7 @@ Requirements
 - An account on Roboflow (where you will need to input your API key)
 - Selection of the detection model type, version, and API from Roboflow
 
-Installation
+## Installation
 
 1. Clone the repository:
     ```sh
@@ -55,7 +55,7 @@ Installation
     pip install -r requirements.txt
     ```
 
-Configuration
+## Configuration
 
 1. Obtain your Roboflow API key and set up your project as described in the [Roboflow documentation](https://roboflow.com/docs).
 2. Create a `.env` file in the project root directory and add your API key:
@@ -63,7 +63,7 @@ Configuration
     API_KEY=your_roboflow_api_key
     ```
 
-Usage
+## Usage
 
 Running the Main Code
 
