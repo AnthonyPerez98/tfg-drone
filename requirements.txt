@@ -1,0 +1,3 @@
+opencv-python==4.5.5.64
+djitellopy==2.4.0
+roboflow==1.0.1
