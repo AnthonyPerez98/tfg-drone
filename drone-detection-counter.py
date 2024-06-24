@@ -5,7 +5,7 @@ import cv2
 # Inicializar el cliente de inferencia de Roboflow
 CLIENT = InferenceHTTPClient(
     api_url="https://detect.roboflow.com",
-    api_key="tVYeBTfHjApBrSJzNiQF"
+    api_key="PUT_YOUR_API_KEY"
 )
 
 
