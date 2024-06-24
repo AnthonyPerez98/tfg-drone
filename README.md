@@ -89,7 +89,7 @@ The code is designed to be general and can detect any objects, depending on the 
 
 ## Video Demonstration
 
-A video demonstrating the results of the project can be found [here](link_to_video).
+A video demonstrating the results of the project can be found [here](https://drive.google.com/file/d/1Dujp9PP1uPRzUcGb-uTcnFvODqBWAImF/view?usp=sharing).
 
 ## Code Walkthrough
 
