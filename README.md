@@ -93,7 +93,7 @@ A video demonstrating the results of the project can be found [here](https://dri
 
 ## Code Walkthrough
 
-A detailed walkthrough of the code is available in the form of a video [here](link_to_code_walkthrough).
+A detailed walkthrough of the code is available in the form of a video [here](https://drive.google.com/file/d/1XkySs3tZjYA0bxSWxae-JlXaWOYnZB_n/view?usp=drive_link).
 
 
 ---
